@@ -11,7 +11,6 @@
   align-items: center;
   font-weight: 600;
   background-color: transparent;
-  /* font-size: large; */
 }
 .navbarLeft,
 .navbarRight {
@@ -22,6 +21,8 @@
   color: white;
   letter-spacing: 1.1;
   align-items: center;
+  padding: 10px 0;
+
 }
 .navbarLeft {
   width: 40%;

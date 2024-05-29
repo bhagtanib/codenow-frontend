@@ -14,7 +14,7 @@ body{
   font-style: normal;
 }
 :root {
-  --navbar-height: 50px;
+  --navbar-height: 80px;
   --main-orange: #e86840;
   --main-blue: #090e43;
   --main-grey: #9c9fa0;
