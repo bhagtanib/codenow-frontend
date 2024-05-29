@@ -1,0 +1,21 @@
+.progressBarContainer {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 3px;
+}
+
+.progressBar {
+  height: 3px;
+  background-color: var(--main-orange);
+  color: white;
+  text-align: center;
+  transition: width 0.3s ease-in-out;
+}
+
+.progressLabel {
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: bold;
+}

@@ -1,0 +1,58 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-grey);
+  padding: 10px;
+  cursor: pointer;
+  /* margin:1px 0; */
+}
+.headerTitle {
+  width: 50%;
+}
+.headerStats {
+  width: 10%;
+}
+
+.problemContainer {
+  display: flex;
+  gap: 20px;
+  /* border: 2px solid var(--main-grey); */
+  border-radius: 20px;
+  margin: 20px 0;
+  height: 150px;
+  transition: all 0.5s ease;
+}
+.problemContainer img {
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.problemRight {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  max-height: 100%;
+  overflow-y: hidden;
+}
+.problemTitle {
+  /* font-size: larger; */
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.problemUser {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.problemUser img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+.problemDescription{
+
+}

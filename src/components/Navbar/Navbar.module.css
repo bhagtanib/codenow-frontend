@@ -1,0 +1,62 @@
+@import "../../index.css";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  align-items: center;
+  font-weight: 600;
+  background-color: transparent;
+  /* font-size: large; */
+}
+.navbarLeft,
+.navbarRight {
+  display: flex;
+  gap: 30px;
+  height: var(--navbar-height);
+  /* color: var(--main-blue); */
+  color: white;
+  letter-spacing: 1.1;
+  align-items: center;
+}
+.navbarLeft {
+  width: 40%;
+  justify-content: space-around;
+  padding-left: 20vh;
+  
+}
+.navbarLeft span{
+  color: var(--main-blue);
+  color: white;
+
+
+}
+.navbarRight {
+  padding-right: 25vh;
+  width: 30%;
+}
+.navbarLeft img {
+  height: calc(var(--navbar-height) + 20px);
+  width: 80px;
+  border-radius: 5px;
+}
+
+.navbarRight button {
+  all: unset;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 5px 20px;
+  border: 2px solid var(--main-orange);
+  border-radius: 5px;
+  color: var(--main-orange);
+  transition: all 0.3s ease-out;
+}
+
+.navbarRight button:hover {
+  color: white;
+  background-color: var(--main-orange);
+}

@@ -1,0 +1,59 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5vh 5vw;
+  color: white;
+  background-color: hsla(0, 0%, 89%, 1);
+
+  background: radial-gradient(
+    circle,
+    rgba(11, 11, 11, 0.959) 20%,
+    rgb(28, 27, 27) 100%
+  );
+}
+
+.heroTop,
+.heroBottom {
+  height: 45vh;
+}
+.heroTop {
+  padding: 50px 0;
+}
+.heroTop p {
+  font-weight: 900;
+  letter-spacing: 2;
+  font-size: 70px;
+  color: white;
+  /* color: var(--main-blue); */
+}
+.heroBottom {
+  display: flex;
+  align-items: flex-start;
+}
+.heroBottomLeft {
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.heroBottomLeft p {
+  font-size: 28px;
+  color: white;
+  /* color: black; */
+}
+.heroBottomLeft button {
+  all: unset;
+  cursor: pointer;
+  color: white; 
+  background-color: var(--main-orange);
+  color: white;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 20px 30px;
+  width: fit-content;
+}
+.heroBottomRight {
+  width: 50%;
+}

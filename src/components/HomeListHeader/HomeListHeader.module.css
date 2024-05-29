@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  height: 100px;
+  background-color: var(--color-sidebar);
+  padding: 20px;
+}
+
+.item {
+  box-sizing: content-box;
+  padding: 10px 20px;
+  background-color: var(--color-row-light);
+  
+  border-radius: 5px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer; /* Add cursor pointer for better UX */
+  position: relative; /* Ensure item is a reference for absolute positioning */
+}
+
+.item img {
+  width: 10px;
+  height: 10px;
+}
+
+.container input {
+  all: unset;
+  border-radius: 5px;
+  width: 30%;
+  background-color: var(--color-row-light);
+  padding: 10px 20px;
+  height: fit-content;
+}
+
+.dropdownItems {
+  display: none; /* Initially hide dropdown */
+  flex-direction: column;
+  background-color: var(--color-row-light);
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  z-index: 10; /* Ensure dropdown appears on top */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Optional: adds a slight shadow for better visibility */
+}
+.dropdownItems div:hover{
+  background-color: green;
+}
+
+.item:hover .dropdownItems{
+  display: flex; /* Show dropdown on hover or focus */
+}

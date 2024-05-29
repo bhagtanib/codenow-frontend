@@ -1,0 +1,43 @@
+.container {
+    margin: 20px;
+    max-height: 70vh;
+    overflow-y: scroll;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .tableRow{
+    font-size: smaller;
+  }
+  .table th,
+  .table td {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: small;
+    width: 0; /* Set initial width to 0 */
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Truncate overflow with an ellipsis */
+  }
+  
+
+  
+  /* Apply alternate background colors to adjacent rows */
+  .table tbody tr:nth-child(even) {
+    background-color: var(--color-background);
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: var(--color-row-light);
+  }
+  
+  .sortButton {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
