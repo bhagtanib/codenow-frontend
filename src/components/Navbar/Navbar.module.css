@@ -27,22 +27,17 @@
 .navbarLeft {
   width: 40%;
   justify-content: space-around;
-  padding-left: 20vh;
-  
 }
 .navbarLeft span{
   color: var(--main-blue);
   color: white;
-
-
 }
 .navbarRight {
   padding-right: 25vh;
   width: 30%;
 }
 .navbarLeft img {
-  height: calc(var(--navbar-height) + 20px);
-  width: 80px;
+  height: calc(50px);
   border-radius: 5px;
 }
 

@@ -14,12 +14,12 @@ const Login = ({ onClose }) => {
   const [password, setPassword] = useState("");
   const [verifyPassword, setVerifyPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const [err, setErr] = useState("");
   const navigate = useNavigate(); // Use useNavigate hook to navigate
 
   const dispatch = useDispatch(); //to post the user Object
 
   // const user = useSelector((state) => state.auth.user);
-
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -39,8 +39,8 @@ const Login = ({ onClose }) => {
         try {
           await initializeUser();
           navigate("/home");
-        } catch (error) {
-          console.log("Can't fetch", error);
+        } catch (err) {
+          console.log("Can't fetch", err);
         }
       } else {
       }
@@ -48,17 +48,23 @@ const Login = ({ onClose }) => {
 
     fetchData();
   }, [navigate]);
+  useEffect(() => {
+    console.log("changed err")
+  }, [err])
+  useEffect(() => {
+    setErr("")
+  }, [isSignUp])
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (isSignUp) {
       if (verifyPassword === password) {
       } else {
-        alert("password did not match");
+        setErr("password did not match");
         return;
       }
       try {
-        const name = firstName + lastName;
+        const name = firstName + " " + lastName;
         const response = await axios.post(
           "https://boiling-brook-19149-8ec2377c0615.herokuapp.com/api/v1/users",
           {
@@ -74,7 +80,8 @@ const Login = ({ onClose }) => {
         );
         navigate("/home");
       } catch (err) {
-        console.error("Error:", err.response.data);
+        // console.error("Error:", err.response.data);
+        setErr(err.response.data)
       }
     } else {
       try {
@@ -91,10 +98,11 @@ const Login = ({ onClose }) => {
         let token = response.data.token;
         axios.defaults.headers.common["x-auth-token"] = token;
         localStorage.setItem("token", token);
-    
+
         navigate("/home");
       } catch (err) {
         console.log("Error:", err.response ? err.response.data : err.message);
+        setErr(err.response ? err.response.data : err.message);
       }
     }
   };
@@ -148,8 +156,9 @@ const Login = ({ onClose }) => {
               required
             />
           )}
+          <p style={{ color: "crimson" }}> &nbsp; {err}</p>
           <button type="submit" className={styles.submitButton}>
-            Login
+            {isSignUp ? "Sign Up" : "Login"}
           </button>
         </form>
         <div>

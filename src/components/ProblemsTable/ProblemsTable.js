@@ -84,27 +84,39 @@ const ProblemsTable = () => {
     }, 2000);
   });
 
-  // Function to handle sorting by a specific column
   const handleSort = (column) => {
     if (sortBy === column) {
-      // Toggle sort order if clicking on the same column
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
-      // Set new sort column and default to ascending order
       setSortBy(column);
       setSortOrder("asc");
     }
   };
 
+  // Map difficulty levels to numeric values
+  const difficultyMap = {
+    Easy: 1,
+    Medium: 2,
+    Hard: 3,
+  };
+
   // Sort table data based on the current sort criteria
   const sortedTableData = tableData.sort((a, b) => {
-    if (sortBy === "title" || sortBy === "difficulty") {
-      const aValue = a[sortBy].toLowerCase();
-      const bValue = b[sortBy].toLowerCase();
+    if (sortBy === "title") {
+      const aValue = a.title.toLowerCase();
+      const bValue = b.title.toLowerCase();
       if (sortOrder === "asc") {
         return aValue.localeCompare(bValue);
       } else {
         return bValue.localeCompare(aValue);
+      }
+    } else if (sortBy === "difficulty") {
+      const aValue = difficultyMap[a.difficulty];
+      const bValue = difficultyMap[b.difficulty];
+      if (sortOrder === "asc") {
+        return aValue - bValue;
+      } else {
+        return bValue - aValue;
       }
     }
     // Default to no sorting

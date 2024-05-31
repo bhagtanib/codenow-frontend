@@ -12,13 +12,14 @@ import axios from "axios";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [authToken, setAuthToken] = useState("");
   const navigate = useNavigate(); // Use useNavigate hook to navigate
 
   useEffect(() => {
-    // Fetch problems only after setting the token
-    const fetchProblems = async () => {
+    const fetchData = async () => {
       try {
+        const currentUser = await initializeUser();
+        dispatch(login({ userWithoutSensitiveInfo: currentUser }));
+
         const currentProblems = await initializeReduxState();
         dispatch(
           updateProblems({
@@ -28,22 +29,11 @@ const Home = () => {
           })
         );
       } catch (error) {
-        console.error("Error fetching problems:", error);
+        console.error("Error fetching data:", error);
       }
     };
-    const fetchUser = async () => {
-      try {
-        const currentUser = await initializeUser();
-        dispatch(login(
-          {userWithoutSensitiveInfo: currentUser}
-        ))
-      } catch (error) {
-        console.error("Error fetching user:", error);
-      }
-    };
-    fetchUser();
-    fetchProblems();
 
+    fetchData();
   }, [dispatch]);
 
   return (

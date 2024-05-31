@@ -6,14 +6,14 @@ import { useNavigate } from "react-router";
 const Navbar = () => {
   const navigate = useNavigate();
   const handleAuthClick = () => {
-    navigate("/auth")
-  }
+    navigate("/auth");
+  };
   return (
     <div className={classes.navbar}>
       <div className={classes.navbarLeft}>
         <img
-          src="https://png.pngtree.com/png-vector/20220702/ourmid/pngtree-coding-logo-template-illustration-design-png-image_5673078.png"
-          alt="laptop-coding"
+          src="https://img.icons8.com/ios-filled/50/e86840/source-code.png"
+          alt="source-code"
         />
       </div>
       <div className={classes.navbarRight}>

@@ -21,7 +21,7 @@ const SidebarItem = ({ details, openModal }) => {
   );
 };
 
-const Info = () => {
+const Info = ({openModal}) => {
   const user = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -45,6 +45,10 @@ const Info = () => {
             if (!user) {
               navigate("/auth");
             }
+            else{
+              openModal()
+            }
+
           }}
         >
           {user ? "View Dashboard" : "Login now"}
@@ -109,7 +113,7 @@ const Sidebar = () => {
 
   return (
     <div className={styles.sidebarContainer}>
-      <Info />
+      <Info openModal={openModal} />
       {sideOptions.map((item, index) => (
         <SidebarItem openModal={openModal} key={index} details={item} />
       ))}
