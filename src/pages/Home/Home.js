@@ -43,7 +43,7 @@ const Home = () => {
       </div>
       <div className={styles.right}>
         <HomeListHeader />
-        <div style={{ padding: "20px" }}>
+        <div style={{ padding: " 0 20px" }}>
           <Featured />
           <div style={{ height: "70vh" }}>
             <ProblemsTable />

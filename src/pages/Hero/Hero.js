@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroTop}>
-        <p>LEVEL UP YOUR</p> <p>{ "< />"} CODING SKILLS </p>
+        <p>LEVEL UP YOUR <span > { " < />"}</span>  CODING SKILLS </p>
       </div>
       <div className={styles.heroBottom}>
         <div className={styles.heroBottomLeft}>

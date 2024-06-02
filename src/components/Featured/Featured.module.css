@@ -3,6 +3,11 @@
   gap: 20px;
   width: 100%;
 }
+.featuredTitle{
+  padding: 15px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
 .item{
   padding: 10px 20px;
   background-color: var(--color-row-light);

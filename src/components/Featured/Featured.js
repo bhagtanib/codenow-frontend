@@ -44,8 +44,8 @@ const Featured = () => {
   }, [tagsToFilter, handleTagFilter]);
 
   return (
-    <>
-      <p># Featured</p>
+    <div>
+      <p className={styles.featuredTitle} >Featured</p>
       <div className={styles.container}>
         {featuredlist.map((item, index) => (
           <span
@@ -59,7 +59,7 @@ const Featured = () => {
           </span>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const TableRow = ({ rowData }) => {
     }
   };
   return (
-    <tr>
+    <tr className={styles.tableRowTr}>
       <td>
         <input
           width="30"

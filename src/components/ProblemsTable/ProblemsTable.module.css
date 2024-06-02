@@ -1,5 +1,5 @@
 .container {
-    margin: 20px;
+    margin: 20px 0;
     max-height: 70vh;
     overflow-y: scroll;
   }
@@ -11,6 +11,9 @@
   .tableRow{
     font-size: smaller;
   }
+  .table td:hover {
+    transform: scale(1.1);
+  }
   .table th,
   .table td {
     padding: 10px 20px;
@@ -21,6 +24,7 @@
     white-space: nowrap;
     overflow: hidden; /* Hide overflow content */
     text-overflow: ellipsis; /* Truncate overflow with an ellipsis */
+    transition: all 0.3s ease-in-out;
   }
   
 

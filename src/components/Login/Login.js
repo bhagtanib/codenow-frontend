@@ -49,7 +49,7 @@ const Login = ({ onClose }) => {
     fetchData();
   }, [navigate]);
   useEffect(() => {
-    console.log("changed err")
+    // console.log("changed err")
   }, [err])
   useEffect(() => {
     setErr("")
